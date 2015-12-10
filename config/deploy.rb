@@ -30,4 +30,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache')
 # restart passenger with 'touch tmp/restart.txt' instead of 'passenger-config restart-app'
 set :passenger_restart_with_touch, true
 
+# Use non-default Ruby
+set :rvm_ruby_string, "2.1.5"
+
 
