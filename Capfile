@@ -1,4 +1,10 @@
-load 'deploy'
-# Uncomment if you are using Rails' asset pipeline
-load 'deploy/assets'
-load 'config/deploy' # remove this line to skip loading any of the default tasks
+# default requires
+require 'capistrano/setup'
+require 'capistrano/deploy'
+
+# additional optional modules
+require 'capistrano/rvm'
+require 'capistrano/bundler'
+require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
+require 'capistrano/passenger'

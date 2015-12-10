@@ -38,8 +38,17 @@ gem 'mustache-rails', github: 'NYULibraries/mustache-rails', require: 'mustache/
 # Use the NYU Libraries assets gem for shared NYU Libraries assets
 gem 'nyulibraries-assets', github: 'NYULibraries/nyulibraries-assets', tag: 'v4.4.0'
 
-# Deploy the application with Formaggio deploy recipes
-gem 'formaggio', github: 'NYULibraries/formaggio', tag: 'v1.4.2'
+# # Deploy the application with Formaggio deploy recipes
+# gem 'formaggio', github: 'NYULibraries/formaggio', tag: 'v1.4.2'
+
+# CU - just use capistrano, nothing local
+group :development do
+ gem 'capistrano', '~> 3.0', require: false
+ gem 'capistrano-rails', '~> 1.1', require: false
+ gem 'capistrano-bundler', '~> 1.1', require: false
+ gem 'capistrano-rvm', '~> 0.1', require: false
+ gem 'capistrano-passenger', '~> 0.1', require: false
+end
 
 # Use Blacklight for searching Solr
 gem 'blacklight', '~> 5.8.0'
