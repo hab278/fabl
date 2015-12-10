@@ -2,11 +2,11 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-# Load the figs variables before the rest of the bundle
-# so we can use env vars in other gems
-require 'figs'
-# Don't run this initializer on travis.
-Figs.load(stage: Rails.env) unless ENV['TRAVIS']
+# # Load the figs variables before the rest of the bundle
+# # so we can use env vars in other gems
+# require 'figs'
+# # Don't run this initializer on travis.
+# Figs.load(stage: Rails.env) unless ENV['TRAVIS']
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

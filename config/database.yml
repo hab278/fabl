@@ -5,9 +5,12 @@ mysql: &mysql
 findingaids: &findingaids
   <<: *mysql
   host: <%= (ENV['FINDINGAIDS_DB_HOST'] || 'localhost') %>
+  port: <%= (ENV['FINDINGAIDS_DB_PORT'] || '3306') %>
   username: <%= (ENV['FINDINGAIDS_DB_USER'] || 'root') %>
   password: <%= (ENV['FINDINGAIDS_DB_PASSWORD'] || '') %>
   database: <%= (ENV['FINDINGAIDS_DB_DATABASE'] || 'findingaids') %>
+  # ssh -v -L 3313:all-db-dev1.cul.columbia.edu:3313 marquis@connect.cul.columbia.edu
+  host: 127.0.0.1
 
 development: &development
   <<: *findingaids
