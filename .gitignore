@@ -1,3 +1,9 @@
+# Ignore config files with sensitive values
+config/app_config.yml
+config/database.yml
+config/blacklight.yml
+config/solr.yml
+
 # Ignore bundler config
 /.bundle
 
