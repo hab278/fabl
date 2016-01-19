@@ -118,6 +118,7 @@ private
       indexer.update(file)
       log.info "Indexed #{file}."
     rescue Exception => e
+      log.error e.backtrace.join("\n")
       log.info "Failed to index #{file}: #{e}."
       false
     end

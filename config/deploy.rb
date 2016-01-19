@@ -31,6 +31,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache')
 set :passenger_restart_with_touch, true
 
 # Use non-default Ruby
-set :rvm_ruby_string, "2.1.5"
+# set :rvm_ruby_string, "2.1.5"
+set :rvm_ruby_version, "2.1.5"
 
 
