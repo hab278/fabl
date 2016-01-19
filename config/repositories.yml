@@ -35,3 +35,32 @@ Catalog:
       url_safe_display: 'Research Institute for the Study of Man'
       url: "rism"
       admin_code: "rism"
+    nnc_a:
+      display: 'Avery Library, Drawings & Archives'
+      url_safe_display: 'Avery Library, Drawings &amp; Archives'
+      url: "nnc_a"
+      admin_code: "nnc-a"
+    nnc_rb:
+      display: 'Rare Book & Manuscript Library'
+      url_safe_display: 'Rare Book &amp; Manuscript Library'
+      url: "nnc_rb"
+      admin_code: "nnc-rb"
+    nnc_ua:
+      display: 'University Archives'
+      url_safe_display: 'University Archives'
+      url: "nnc_ua"
+      admin_code: "nnc-ua"
+    nnc_ut:
+      display: 'Burke Library (UTS) '
+      url_safe_display: 'Burke Library (UTS)'
+      url: "nnc_ut"
+      admin_code: "nnc-ut"
+    tmp:
+      display: 'tmp repository'
+      url_safe_display: 'tmp repository'
+      url: "tmp"
+      admin_code: "tmp"
+      
+      
+      
+      
