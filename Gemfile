@@ -37,8 +37,8 @@ gem 'mustache-rails', github: 'NYULibraries/mustache-rails', require: 'mustache/
 
 # # Use the NYU Libraries assets gem for shared NYU Libraries assets
 # gem 'nyulibraries-assets', github: 'NYULibraries/nyulibraries-assets', tag: 'v4.4.0'
-# gem 'fabl-assets', github: 'cul/fabl-assets'
-gem 'fabl-assets', path: '/Users/marquis/src/fabl-assets'
+gem 'fabl-assets', github: 'cul/fabl-assets'
+# gem 'fabl-assets', path: '/Users/marquis/src/fabl-assets'
 # gem 'nyulibraries-assets', path: '/Users/marquis/src/nyulibraries-assets'
 
 
