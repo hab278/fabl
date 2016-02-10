@@ -5,6 +5,8 @@ if ENV['RAILS_ENV'] == 'test'
   WebMock.allow_net_connect!
 end
 
+require 'find'
+
 namespace :findingaids do
 
   namespace :jetty do
@@ -23,6 +25,23 @@ namespace :findingaids do
       Rake::Task["jetty:clean"].execute
       # Copying custom conf to generated jetty solr
       Rake::Task["findingaids:jetty:config_solr"].execute
+    end
+  end
+
+  # Do this to filter on file suffix:
+  #     rake findingaids:cul:index[_fabl.xml]
+  namespace :cul do
+    ead_path = ENV['EAD_PATH'] || '../FABL-Data/ead'
+
+    task :index, [:file_pattern] => :environment do |t, args|
+      file_pattern = args[:file_pattern]
+      indexer = Findingaids::Ead::Indexer.new
+      Find.find(ead_path) do |path|
+        next unless path =~ /.*#{file_pattern}$/
+        puts "indexing #{path}..."
+        # ENV['EAD'] = path
+        indexer.index(path)
+      end
     end
   end
 

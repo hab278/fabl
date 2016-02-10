@@ -15,3 +15,14 @@ export FINDINGAIDS_FULL_HOST=dlib.nyu.edu
 If you need to index to Solr but you're off campus, 
 you'll need to tunnel, details in the solr.yml
 
+
+
+---
+How to do a full index:
+
+$ rake findingaids:cul:index[_fabl.xml]
+
+
+
+----
+
