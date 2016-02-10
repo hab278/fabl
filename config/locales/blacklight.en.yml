@@ -1,6 +1,6 @@
 en:
   blacklight:
-    application_name: 'NYU Division of Libraries'
+    application_name: 'Columbia Librariesision of Libraries'
     search:
       form:
         q: "Names, places, subjects, material types..."
@@ -34,4 +34,4 @@ en:
 
       Or browse resources by the facets in the sidebar.
 
-    footer: NYU Division of Libraries.
+    footer: Columbia Librariesision of Libraries.

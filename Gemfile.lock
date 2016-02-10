@@ -7,23 +7,21 @@ GIT
       mustache (~> 0.99.4)
 
 GIT
-  remote: git://github.com/NYULibraries/nyulibraries-assets.git
-  revision: 4bc784f765a1d994ae37e993edb1fd3ce690a962
-  tag: v4.4.0
-  specs:
-    nyulibraries-assets (4.4.0)
-      bootstrap-sass (~> 3.2.0.2)
-      compass (~> 1.0.1)
-      font-awesome-rails (~> 4.2.0.0)
-      institutions (~> 0.1.3)
-
-GIT
   remote: git://github.com/NYULibraries/omniauth-nyulibraries.git
   revision: 352bd2c76350483667c603c1a7e63735e4a283b8
   tag: v2.0.0
   specs:
     omniauth-nyulibraries (1.1.0)
       omniauth-oauth2 (~> 1.2.0)
+
+PATH
+  remote: ../fabl-assets
+  specs:
+    fabl-assets (4.6.3)
+      bootstrap-sass (~> 3.2.0.2)
+      compass (~> 1.0.1)
+      font-awesome-rails (~> 4.2.0.0)
+      institutions (~> 0.1.3)
 
 GEM
   remote: https://rubygems.org/
@@ -417,6 +415,7 @@ DEPENDENCIES
   dalli (~> 2.7.0)
   database_cleaner (~> 1.3.0)
   devise (~> 3.4.1)
+  fabl-assets!
   factory_girl_rails (~> 4.5.0)
   faraday (~> 0.9.1)
   font-awesome-rails (~> 4.2.0)
@@ -428,7 +427,6 @@ DEPENDENCIES
   mustache-rails!
   mysql2 (~> 0.3.16)
   newrelic_rpm (~> 3.6)
-  nyulibraries-assets!
   omniauth-nyulibraries!
   phantomjs (>= 1.9.0)
   poltergeist (~> 1.6.0)

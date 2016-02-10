@@ -35,8 +35,12 @@ gem 'compass-rails', '~> 2.0.0'
 gem 'mustache', '0.99.4'
 gem 'mustache-rails', github: 'NYULibraries/mustache-rails', require: 'mustache/railtie'
 
-# Use the NYU Libraries assets gem for shared NYU Libraries assets
-gem 'nyulibraries-assets', github: 'NYULibraries/nyulibraries-assets', tag: 'v4.4.0'
+# # Use the NYU Libraries assets gem for shared NYU Libraries assets
+# gem 'nyulibraries-assets', github: 'NYULibraries/nyulibraries-assets', tag: 'v4.4.0'
+# gem 'fabl-assets', github: 'cul/fabl-assets'
+gem 'fabl-assets', path: '/Users/marquis/src/fabl-assets'
+# gem 'nyulibraries-assets', path: '/Users/marquis/src/nyulibraries-assets'
+
 
 # comment out NYU bits...
 # # Deploy the application with Formaggio deploy recipes
