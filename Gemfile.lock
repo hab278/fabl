@@ -14,8 +14,9 @@ GIT
     omniauth-nyulibraries (1.1.0)
       omniauth-oauth2 (~> 1.2.0)
 
-PATH
-  remote: ../fabl-assets
+GIT
+  remote: git://github.com/cul/fabl-assets.git
+  revision: 3de1775d4147c88f841511bd1126ad556b568ad3
   specs:
     fabl-assets (4.6.3)
       bootstrap-sass (~> 3.2.0.2)
