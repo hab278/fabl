@@ -12,21 +12,35 @@ module ApplicationHelper
     path = (doc[:parent_ssm].blank?) ? (doc[:format_ssm].first == "Archival Collection") ? nil : "dsc#{doc[:ref_ssi]}" : "dsc#{doc[:parent_ssm].first}"
     anchor = (doc[:parent_ssm].blank?) ? nil : doc[:ref_ssi]
     # Get repository, component ref and EAD id
-    repository, eadid = doc[:repository_ssi], doc[:ead_ssi]
+    repository, eadid = doc[:repository_ssi], doc[:ead_ssi].sub('_ead.xml', '')
     url = url_for_findingaid(repository, eadid, path, anchor)
     # If implied parent structure is correct, use it
     if url_exists?(url)
       return url
     # If not, default to dsc.html with an anchor to the ref id
     else
-      return url_for_findingaid(repository, eadid, "dsc", doc[:ref_ssi])
+      return url_for_findingaid(repository, unitid, "dsc", doc[:unitid_ssm])
     end
   end
 
   # Create url for finding aid
+  # Finding Aids are at URLs like this:
+  # http://findingaids.cul.columbia.edu/ead/nnc-rb/ldpd_4078917/dsc/5#subseries4
   def url_for_findingaid(repository, eadid, page = nil, anchor = nil)
-    page = [page, ENV['FINDINGAIDS_FULL_DEFAULT_EXTENSION']].join(".") unless page.nil?
-    return "http://#{ENV['FINDINGAIDS_FULL_HOST']}#{[ENV['FINDINGAIDS_FULL_PATH'], repository, eadid, page].join("/")}#{"#" + anchor unless anchor.nil?}"
+    # No file extensions, our finding aids are app-generated
+    # page = [page, ENV['FINDINGAIDS_FULL_DEFAULT_EXTENSION']].join(".") unless page.nil?
+
+    # switch from ENV to APP_CONFIG
+    # return "http://#{ENV['FINDINGAIDS_FULL_HOST']}#{[ENV['FINDINGAIDS_FULL_PATH'], repository, eadid, page].join("/")}#{"#" + anchor unless anchor.nil?}"
+    url = "http://#{APP_CONFIG['findingaids_full_host']}/" +
+           APP_CONFIG['findingaids_full_path'] + "/" +
+           repository + "/" + eadid
+    # if page.present?
+    #   url = url + "/" + page
+    # end
+    # if anchor.present?
+    #   url = url + "#" + anchor
+    # end
   end
 
   # Does the url actually return a valid page
