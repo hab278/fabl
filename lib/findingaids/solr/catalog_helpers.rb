@@ -52,6 +52,7 @@ module Findingaids
         def facet_fields
           @facet_fields ||= [
             { field: "repository", label: "Library", helper_method: :render_repository_facet_link },
+            { field: "format", label: "Level", limit: 20, collapse: false },
             { field: "dao", label: "Digital Content" },
             { field: "creator", label: "Creator", limit: 20 },
             { field: "date_range", label: "Date Range", limit: 20 },
@@ -60,7 +61,6 @@ module Findingaids
             { field: "place", label: "Place", limit: 20 },
             { field: "language", label: "Language", limit: 20 },
             { field: "collection", label: "Collection", limit: 20 },
-            { field: "format", label: "Level", limit: 20 }
           ]
         end
 
