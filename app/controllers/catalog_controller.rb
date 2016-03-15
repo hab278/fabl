@@ -50,7 +50,7 @@ class CatalogController < ApplicationController
     # sniffing requires solr requests to be made with "echoParams=all", for
     # app code to actually have it echo'd back to see it.
     facet_fields.each do |facet|
-      config.add_facet_field solr_name(facet[:field], :facetable), label: facet[:label], helper_method: facet[:helper_method], limit: (facet[:limit] || 20)
+      config.add_facet_field solr_name(facet[:field], :facetable), label: facet[:label], helper_method: facet[:helper_method], limit: (facet[:limit] || 20), collapse: (facet.key?(:collapse) ? facet[:collapse] : true)
     end
 
     # Have BL send all facet field names to Solr, which has been the default
