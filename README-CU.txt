@@ -20,6 +20,7 @@ you'll need to tunnel, details in the solr.yml
 ---
 How to do a full index:
 
+$ export EAD_PATH=
 $ rake findingaids:cul:index[_fabl.xml]
 
 
