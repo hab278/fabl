@@ -34,7 +34,6 @@ module Findingaids::Ead::Behaviors
     # Return an array of Date Range facets where unit dates fall in the range
     # add undated text if date falls outside known range
     def get_date_range_facets(date_ranges = Array.new)
-raise
       # Add
       DATE_RANGES.each do |date_range|
         date_ranges << date_range[:display] if self.unitdate_normal.any? {|unitdate| in_range?(unitdate, date_range) }

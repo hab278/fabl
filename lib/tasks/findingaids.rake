@@ -36,6 +36,8 @@ namespace :findingaids do
     task :index, [:file_pattern] => :environment do |t, args|
       file_pattern = args[:file_pattern]
       indexer = Findingaids::Ead::Indexer.new
+      puts "Searching for *#{file_pattern} beneath #{ead_path}..."
+
       Find.find(ead_path) do |path|
         next unless path =~ /.*#{file_pattern}$/
         puts "indexing #{path}..."
