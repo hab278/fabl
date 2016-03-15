@@ -2,6 +2,7 @@ module Findingaids::Ead::Behaviors
   module Dates
 
     DATE_RANGES = [
+      # Early finding aids - centuries for date-range facets
       { display: "1101-1200", start_date: 1101, end_date: 1200 },
       { display: "1201-1300", start_date: 1201, end_date: 1300 },
       { display: "1301-1400", start_date: 1301, end_date: 1400 },
@@ -10,14 +11,30 @@ module Findingaids::Ead::Behaviors
       { display: "1601-1700", start_date: 1601, end_date: 1700 },
       { display: "1701-1800", start_date: 1701, end_date: 1800 },
       { display: "1801-1900", start_date: 1801, end_date: 1900 },
-      { display: "1901-2000", start_date: 1901, end_date: 2000 },
-      { display: "2001-2100", start_date: 2001, end_date: 2100 }
+      # Later finding aids - decades for date-range facets
+      # { display: "1901-2000", start_date: 1901, end_date: 2000 },
+      # { display: "2001-2100", start_date: 2001, end_date: 2100 }
+      { display: "1901-1910", start_date: 1901, end_date: 1910 },
+      { display: "1911-1920", start_date: 1911, end_date: 1920 },
+      { display: "1921-1930", start_date: 1921, end_date: 1930 },
+      { display: "1931-1940", start_date: 1931, end_date: 1940 },
+      { display: "1941-1950", start_date: 1941, end_date: 1950 },
+      { display: "1951-1960", start_date: 1951, end_date: 1960 },
+      { display: "1961-1970", start_date: 1961, end_date: 1970 },
+      { display: "1971-1980", start_date: 1971, end_date: 1980 },
+      { display: "1981-1990", start_date: 1981, end_date: 1990 },
+      { display: "1991-2000", start_date: 1991, end_date: 2000 },
+      { display: "2001-2010", start_date: 2001, end_date: 2010 },
+      { display: "2011-2020", start_date: 2011, end_date: 2020 },
+      # { display: "1901-2000", start_date: 1901, end_date: 2000 },
+      # { display: "2001-2100", start_date: 2001, end_date: 2100 }
     ]
     UNDATED = "undated & other"
 
     # Return an array of Date Range facets where unit dates fall in the range
     # add undated text if date falls outside known range
     def get_date_range_facets(date_ranges = Array.new)
+raise
       # Add
       DATE_RANGES.each do |date_range|
         date_ranges << date_range[:display] if self.unitdate_normal.any? {|unitdate| in_range?(unitdate, date_range) }
