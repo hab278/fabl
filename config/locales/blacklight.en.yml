@@ -1,6 +1,6 @@
 en:
   blacklight:
-    application_name: 'Columbia Librariesision of Libraries'
+    application_name: 'Columbia University Libraries'
     search:
       form:
         q: "Names, places, subjects, material types..."
@@ -34,4 +34,4 @@ en:
 
       Or browse resources by the facets in the sidebar.
 
-    footer: Columbia Librariesision of Libraries.
+    footer: Columbia University Libraries.
